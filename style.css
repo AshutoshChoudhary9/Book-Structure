@@ -132,7 +132,7 @@ button:hover {
 
   #printContainer {
     position: static;
-    width: 5in;
+    width: auto;
     visibility: visible;
   }
 }
