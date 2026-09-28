@@ -93,24 +93,8 @@ function renderBook() {
 renderButton.addEventListener("click", renderBook);
 
 downloadButton.addEventListener("click", () => {
-  const book = renderBook();
-  if (!book) {
+  if (!renderBook()) {
     alert("Please paste manuscript text before downloading.");
-    return;
-  }
-
-  if (window.html2pdf) {
-    window.html2pdf()
-      .set({
-        margin: 0,
-        filename: "kdp-paperback-5x8.pdf",
-        image: { type: "jpeg", quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: "in", format: [5, 8], orientation: "portrait" },
-        pagebreak: { mode: ["css", "legacy"] },
-      })
-      .from(book)
-      .save();
     return;
   }
 
