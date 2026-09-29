@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KDP Paperback Formatter</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <main class="app-shell">
+      <h1>KDP Paperback Formatter (5x8)</h1>
+      <label for="manuscriptInput">Paste manuscript or Markdown</label>
+      <textarea
+        id="manuscriptInput"
+        placeholder="Paste manuscript text here..."
+      ></textarea>
+      <div class="actions">
+        <button id="renderButton" type="button">Render for Print</button>
+        <button id="downloadButton" type="button">Download Print PDF</button>
+      </div>
+      <p class="hint">
+        Chapters are detected from lines like “Chapter 1” or markdown headings that contain “chapter”.
+      </p>
+    </main>
+
+    <section id="printContainer" aria-label="Print layout" hidden></section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

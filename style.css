@@ -1,0 +1,138 @@
+:root {
+  font-family: "Merriweather", Georgia, serif;
+  color: #111;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f5f5;
+}
+
+.app-shell {
+  max-width: 840px;
+  margin: 2rem auto;
+  padding: 1.25rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+textarea {
+  width: 100%;
+  min-height: 320px;
+  padding: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: 400 1rem/1.5 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+.actions {
+  margin-top: 0.9rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  background: #1d4ed8;
+  color: #fff;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+.hint {
+  margin-bottom: 0;
+  font-size: 0.92rem;
+}
+
+#printContainer {
+  position: absolute;
+  top: 0;
+  left: -10000px;
+  width: 5in;
+  visibility: hidden;
+}
+
+.book {
+  width: 100%;
+}
+
+.chapter {
+  break-before: page;
+  page-break-before: always;
+}
+
+.chapter.first-chapter {
+  break-before: auto;
+  page-break-before: auto;
+}
+
+.chapter-title {
+  text-align: center;
+  margin: 0 0 1.2rem;
+  font-size: 1.25rem;
+}
+
+.chapter p {
+  margin: 0;
+  text-align: justify;
+  line-height: 1.2;
+  text-indent: 1.5em;
+}
+
+.chapter p + p {
+  margin-top: 0.7em;
+}
+
+@page {
+  size: 5in 8in;
+  margin-top: 0.375in;
+  margin-bottom: 0.375in;
+}
+
+@page :left {
+  margin-left: 0.375in;
+  margin-right: 0.5in;
+}
+
+@page :right {
+  margin-left: 0.5in;
+  margin-right: 0.375in;
+}
+
+@media print {
+  body {
+    margin: 0;
+    background: #fff;
+  }
+
+  .app-shell {
+    display: none;
+  }
+
+  #printContainer {
+    position: static;
+    width: auto;
+    visibility: visible;
+  }
+}
